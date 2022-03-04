@@ -42,6 +42,7 @@ public class CameraActivity extends AppCompatActivity{
     private static final String TAG = "CameraActivity";
     public static final int REQUEST_PERMISSION = 11;
 
+    private Button btnCamera, btnSave;
     private ImageView ivCapture;
     private String mCurrentPhotoPath;
 
@@ -53,8 +54,8 @@ public class CameraActivity extends AppCompatActivity{
         checkPermission(); // 권한 체크
 
         ivCapture = findViewById(R.id.ivCapture);
-        Button btnCamera = findViewById(R.id.btnCapture);
-        Button btnSave = findViewById(R.id.btnSave);
+        btnCamera = findViewById(R.id.btnCapture);
+        btnSave = findViewById(R.id.btnSave);
 
         loadImgArr();
 

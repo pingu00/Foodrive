@@ -1,10 +1,14 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText et_id, et_pass;
     private Button btn_login, btn_register;
+    private ConstraintLayout parent_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,17 @@ public class LoginActivity extends AppCompatActivity {
         et_pass = findViewById(R.id.et_pass);
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
+        parent_layout = (ConstraintLayout)findViewById(R.id.parent_layout);
+
+
+        parent_layout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                hideKeyBoard();
+                return false;
+            }
+        });
+
 
 
         // 회원가입 버튼을 클릭 시 수행
@@ -83,5 +99,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    void hideKeyBoard()
+    {
+        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 }

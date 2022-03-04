@@ -2,9 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="회원가입"
+        app:layout_constraintEnd_toEndOf="@+id/et_age"
+        app:layout_constraintStart_toStartOf="@+id/et_age"
+        app:layout_constraintTop_toBottomOf="@+id/et_age" />
 
     <EditText
         android:id="@+id/et_id"
@@ -57,15 +68,5 @@
         app:layout_constraintEnd_toEndOf="@+id/et_name"
         app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="회원가입"
-        app:layout_constraintEnd_toEndOf="@+id/et_age"
-        app:layout_constraintStart_toStartOf="@+id/et_age"
-        app:layout_constraintTop_toBottomOf="@+id/et_age" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
