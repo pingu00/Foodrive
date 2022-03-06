@@ -10,18 +10,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tv_name, tv_id, tv_pass;
-    private Button btn_camera;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_name = findViewById(R.id.tv_name);
-        tv_id = findViewById(R.id.tv_id);
-        tv_pass = findViewById(R.id.tv_pass);
-        btn_camera = findViewById(R.id.btn_camera);
+        TextView tv_name = findViewById(R.id.tv_name);
+        TextView tv_id = findViewById(R.id.tv_id);
+        TextView tv_pass = findViewById(R.id.tv_pass);
+        Button btn_camera = findViewById(R.id.btn_camera);
+        Button btn_gps = findViewById(R.id.btn_gps);
 
         btn_camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        btn_gps.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View view) {
+                    Intent intent2 = new Intent(MainActivity.this, GPSActivity.class);
+                    startActivity(intent2);
+                }
+        });
         Intent intent = getIntent();
         String userName = intent.getStringExtra("userName");
         String userID = intent.getStringExtra("userID");
