@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv_name, tv_id, tv_pass;
-    private Button btn_camera;
+    private Button btn_camera, btn_map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         tv_id = findViewById(R.id.tv_id);
         tv_pass = findViewById(R.id.tv_pass);
         btn_camera = findViewById(R.id.btn_camera);
+        btn_map = findViewById(R.id.btn_map);
 
         btn_camera.setOnClickListener(new View.OnClickListener() {
             @Override
