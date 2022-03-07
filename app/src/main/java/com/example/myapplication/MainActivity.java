@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv_name, tv_id, tv_pass;
-    private Button btn_camera, btn_map;
+    private Button btn_camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         tv_id = findViewById(R.id.tv_id);
         tv_pass = findViewById(R.id.tv_pass);
         btn_camera = findViewById(R.id.btn_camera);
-        btn_map = findViewById(R.id.btn_map);
 
         TextView tv_name = findViewById(R.id.tv_name);
         TextView tv_id = findViewById(R.id.tv_id);
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn_camera = findViewById(R.id.btn_camera);
         Button btn_gps = findViewById(R.id.btn_gps);
 
+        // 카메라 버튼
         btn_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,13 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        // 오류 조치 시까지 미사용
-/*        btn_gps.setOnClickListener(new View.OnClickListener() {
+
+        // gps 버튼
+        btn_gps.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
                     Intent intent2 = new Intent(MainActivity.this, GPSActivity.class);
                     startActivity(intent2);
                 }
-        });*/
+        });
         Intent intent = getIntent();
         String userName = intent.getStringExtra("userName");
         String userID = intent.getStringExtra("userID");

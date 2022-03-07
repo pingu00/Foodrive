@@ -1,11 +1,9 @@
-/*
 package com.example.myapplication
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
-import android.location.LocationRequest
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,8 +14,6 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import android.widget.Button
-import com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
-import com.google.android.gms.location.LocationServices
 
 
 open class GPSActivity : AppCompatActivity() {
@@ -41,7 +37,6 @@ open class GPSActivity : AppCompatActivity() {
         button = findViewById(R.id.btn_location)
         text1 = findViewById(R.id.text1)
         text2 = findViewById(R.id.text2)
-
 
         mLocationRequest =  LocationRequest.create().apply {
 
@@ -125,4 +120,3 @@ open class GPSActivity : AppCompatActivity() {
         }
     }
 }
-*/
