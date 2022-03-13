@@ -43,9 +43,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    //noinspection GradleDependency,GradleDependency
+
+    //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation("com.naver.maps:map-sdk:3.14.0")
+
+
 
 
 }
